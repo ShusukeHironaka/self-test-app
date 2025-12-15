@@ -7,68 +7,79 @@
 </head>
 <body>
   <div class="container">
-  <h1>職種適性診断</h1>
-  <p>10問の質問に答えると、あなたの強みと向いている職種がわかります。</p>
+    <h1>職種適性診断</h1>
+    <p>12問で6つの能力値を推定し、職種・業界・人物/キャラの類似を表示します（匿名・保存なし）。</p>
 
-  <form id="diagnosisForm">
-    <div>
-      <p>Q1. 物事を抽象化して考えるのが得意だ</p>
-      <select id="q1"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+    <form id="diagnosisForm">
+      <div class="section-title">回答（1〜10）</div>
 
-    <div>
-      <p>Q2. 曖昧な状況でも方向性を決められる</p>
-      <select id="q2"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <!-- Vision -->
+      <div class="q">
+        <p>Q1. 複雑な状況でも「何が本質か」を言語化できる</p>
+        <select id="q1" class="scale"></select>
+      </div>
+      <div class="q">
+        <p>Q2. 未来の理想像から逆算して考えることが多い</p>
+        <select id="q2" class="scale"></select>
+      </div>
 
-    <div>
-      <p>Q3. 全体像から逆算して考えることが多い</p>
-      <select id="q3"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <!-- Execution -->
+      <div class="q">
+        <p>Q3. まず動く形にしてから改善していくのが得意だ</p>
+        <select id="q3" class="scale"></select>
+      </div>
+      <div class="q">
+        <p>Q4. 地味な作業でも、完了まで粘り強くやり切れる</p>
+        <select id="q4" class="scale"></select>
+      </div>
 
-    <div>
-      <p>Q4. 手を動かして形にするのが好きだ</p>
-      <select id="q4"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <!-- Analysis -->
+      <div class="q">
+        <p>Q5. 数字や事実から仮説を立てて検証するのが好きだ</p>
+        <select id="q5" class="scale"></select>
+      </div>
+      <div class="q">
+        <p>Q6. 物事を「原因→結果」で説明するのが得意だ</p>
+        <select id="q6" class="scale"></select>
+      </div>
 
-    <div>
-      <p>Q5. 試行錯誤を続けるのが苦にならない</p>
-      <select id="q5"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <!-- Collaboration -->
+      <div class="q">
+        <p>Q7. 立場の違う人同士の意見を整理して合意形成できる</p>
+        <select id="q7" class="scale"></select>
+      </div>
+      <div class="q">
+        <p>Q8. 相手の理解度に合わせて伝え方を変えられる</p>
+        <select id="q8" class="scale"></select>
+      </div>
 
-    <div>
-      <p>Q6. 一人で集中して作業する時間が好きだ</p>
-      <select id="q6"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <!-- Learning -->
+      <div class="q">
+        <p>Q9. 未知のテーマでも短期間でキャッチアップできる</p>
+        <select id="q9" class="scale"></select>
+      </div>
+      <div class="q">
+        <p>Q10. フィードバックを受けてやり方を素早く改善できる</p>
+        <select id="q10" class="scale"></select>
+      </div>
 
-    <div>
-      <p>Q7. 数字やデータを見ると仮説を立てたくなる</p>
-      <select id="q7"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <!-- Creativity -->
+      <div class="q">
+        <p>Q11. 0→1のアイデア出しや企画づくりが得意だ</p>
+        <select id="q11" class="scale"></select>
+      </div>
+      <div class="q">
+        <p>Q12. 既存の情報を編集して、わかりやすく魅力的にできる</p>
+        <select id="q12" class="scale"></select>
+      </div>
 
-    <div>
-      <p>Q8. 原因と結果を論理的に説明できる</p>
-      <select id="q8"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
+      <button type="button" onclick="diagnose()">診断する</button>
+    </form>
 
-    <div>
-      <p>Q9. 感覚よりも根拠を重視する</p>
-      <select id="q9"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
-
-    <div>
-      <p>Q10. 複雑な情報を整理するのが得意だ</p>
-      <select id="q10"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
-    </div>
-
-    <br>
-    <button type="button" onclick="diagnose()">診断する</button>
-  </form>
-
-  <hr>
-  <div id="result"></div>
+    <hr>
+    <div id="result"></div>
   </div>
+
   <script src="app.js"></script>
 </body>
 </html>
-
