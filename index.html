@@ -2,25 +2,72 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>簡単自己診断</title>
+  <title>職種適性診断</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>簡単自己診断</h1>
+  <h1>職種適性診断</h1>
+  <p>10問の質問に答えると、あなたの強みと向いている職種がわかります。</p>
 
-  <p>Q1. 新しいスキルを学ぶのは好きですか？</p>
-  <select id="q1">
-    <option value="1">あまり好きではない</option>
-    <option value="3">どちらともいえない</option>
-    <option value="5">とても好き</option>
-  </select>
+  <form id="diagnosisForm">
+    <div>
+      <p>Q1. 物事を抽象化して考えるのが得意だ</p>
+      <select id="q1"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
 
-  <br><br>
+    <div>
+      <p>Q2. 曖昧な状況でも方向性を決められる</p>
+      <select id="q2"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
 
-  <button onclick="diagnose()">診断する</button>
+    <div>
+      <p>Q3. 全体像から逆算して考えることが多い</p>
+      <select id="q3"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
 
-  <h2 id="result"></h2>
+    <div>
+      <p>Q4. 手を動かして形にするのが好きだ</p>
+      <select id="q4"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <div>
+      <p>Q5. 試行錯誤を続けるのが苦にならない</p>
+      <select id="q5"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <div>
+      <p>Q6. 一人で集中して作業する時間が好きだ</p>
+      <select id="q6"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <div>
+      <p>Q7. 数字やデータを見ると仮説を立てたくなる</p>
+      <select id="q7"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <div>
+      <p>Q8. 原因と結果を論理的に説明できる</p>
+      <select id="q8"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <div>
+      <p>Q9. 感覚よりも根拠を重視する</p>
+      <select id="q9"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <div>
+      <p>Q10. 複雑な情報を整理するのが得意だ</p>
+      <select id="q10"><option value="1">全く違う</option><option value="3">どちらとも</option><option value="5">とてもそう</option></select>
+    </div>
+
+    <br>
+    <button type="button" onclick="diagnose()">診断する</button>
+  </form>
+
+  <hr>
+  <div id="result"></div>
 
   <script src="app.js"></script>
 </body>
 </html>
+
