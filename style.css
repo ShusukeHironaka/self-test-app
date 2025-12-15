@@ -191,3 +191,79 @@ canvas{
   color: var(--muted);
   font-size: 13px;
 }
+
+/* --- NPS-like segmented scale (0-10) --- */
+.nps-scale{
+  margin-top: 10px;
+}
+
+.nps-row{
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  gap: 10px;
+  align-items: center;
+}
+
+.nps-face{
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  border: 1px solid rgba(31,42,58,.9);
+  background: rgba(11,15,20,.45);
+}
+
+.nps-face.left{ color: rgba(248,113,113,.95); }
+.nps-face.right{ color: rgba(52,211,153,.95); }
+
+.nps-segments{
+  display: grid;
+  grid-template-columns: repeat(11, 1fr);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(31,42,58,.9);
+}
+
+.nps-segments input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nps-segments label{
+  display: grid;
+  place-items: center;
+  height: 42px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  border-right: 1px solid rgba(255,255,255,.06);
+}
+
+.nps-segments label:last-child{ border-right: none; }
+
+.nps-segments label.detractor{ background: rgba(239,68,68,.35); }
+.nps-segments label.passive{ background: rgba(245,158,11,.35); }
+.nps-segments label.promoter{ background: rgba(16,185,129,.35); }
+
+.nps-segments label:hover{
+  filter: brightness(1.10);
+}
+
+.nps-segments input:checked + label{
+  outline: 2px solid rgba(232,238,246,.85);
+  outline-offset: -2px;
+  filter: brightness(1.15);
+}
+
+.nps-legend{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
