@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>簡単自己診断</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>簡単自己診断</h1>
+
+  <p>Q1. 新しいスキルを学ぶのは好きですか？</p>
+  <select id="q1">
+    <option value="1">あまり好きではない</option>
+    <option value="3">どちらともいえない</option>
+    <option value="5">とても好き</option>
+  </select>
+
+  <br><br>
+
+  <button onclick="diagnose()">診断する</button>
+
+  <h2 id="result"></h2>
+
+  <script src="app.js"></script>
+</body>
+</html>
